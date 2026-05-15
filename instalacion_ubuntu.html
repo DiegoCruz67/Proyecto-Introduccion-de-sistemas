@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Proyecto 6 - Instalación de Ubuntu</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+
+  <h1>Proyecto 6: Instalación de Ubuntu en Máquina Virtual</h1>
+  <h2>Curso: Introducción a los Sistemas de Cómputo</h2>
+
+  <hr>
+
+  <h3>Datos Generales del Proyecto</h3>
+  <table border="1">
+    <tr><th>Nombre del Proyecto</th><td>Instalación de Ubuntu 24.04 LTS en VirtualBox</td></tr>
+    <tr><th>Tipo de Trabajo</th><td>Individual</td></tr>
+    <tr><th>Curso</th><td>Introducción a los Sistemas de Cómputo</td></tr>
+    <tr><th>Catedrático</th><td>Ing. Antonio Escobar</td></tr>
+    <tr><th>Porcentaje de Dominio</th><td>85%</td></tr>
+    <tr><th>Estudiante</th><td>Diego Andreé de la Cruz Reyes</td></tr>
+    <tr><th>Carnet</th><td>5090-26-2322</td></tr>
+  </table>
+
+  <hr>
+<h2>Video</h2>
+  <video controls>
+  <source src="Proyecto Ubuntu.mp4" type="video/mp4">
+  </video>
+  <hr>
+<h2>Video</h2>
+  <video controls>
+  <source src="Video Conta.mp4" type="video/mp4">
+  </video>
+
+
+  
+<hr>
+  <div class="tres-fotos">
+  <div class="foto-item">
+    <div class="foto-circulo-md">
+      <img src="ubuntu1.png" alt="Foto 1">
+    </div>
+    <p class="foto-caption"></p>
+  </div>
+
+  <div class="foto-item">
+    <div class="foto-circulo-md">
+      <img src="ubuntu2.png" alt="Foto 2">
+    </div>
+    <p class="foto-caption"></p>
+  </div>
+
+  <div class="foto-item">
+    <div class="foto-circulo-md">
+      <img src="ubuntu3.png" alt="Foto 3">
+    </div>
+    <p class="foto-caption"></p>
+  </div>
+  </div>
+
+  
+
+  <hr>
+
+  <h3>Descripción General</h3>
+  <p>
+    Se realizó la instalación de Ubuntu, una distribución de Linux de código abierto, dentro
+    de una máquina virtual usando Oracle VM VirtualBox. Este proyecto introdujo al estudiante
+    en el mundo de los sistemas operativos alternativos a Windows, en la virtualización de
+    sistemas y en el uso básico de la terminal de Linux.
+  </p>
+  <p>
+    La virtualización es una tecnología fundamental en la ingeniería de sistemas moderna,
+    ya que permite ejecutar múltiples sistemas operativos en un mismo equipo físico, lo cual
+    es ampliamente utilizado en servidores, desarrollo de software, pruebas de seguridad y
+    entornos de aprendizaje.
+  </p>
+
+  <hr>
+
+  <h3>¿Qué es Ubuntu?</h3>
+  <table border="1">
+    <tr>
+      <th>Característica</th>
+      <th>Descripción</th>
+    </tr>
+    <tr>
+      <td>Sistema operativo</td>
+      <td>Ubuntu es una distribución de GNU/Linux basada en Debian. Es de código abierto y gratuita.</td>
+    </tr>
+    <tr>
+      <td>Versión utilizada</td>
+      <td>Ubuntu 24.04.4 LTS (Long Term Support) &mdash; con soporte hasta 2029.</td>
+    </tr>
+    <tr>
+      <td>Arquitectura</td>
+      <td>AMD64 de 64 bits.</td>
+    </tr>
+    <tr>
+      <td>Entorno de escritorio</td>
+      <td>GNOME (interfaz gráfica moderna e intuitiva).</td>
+    </tr>
+    <tr>
+      <td>Tamaño de la imagen ISO</td>
+      <td>Aproximadamente 5.7 GB.</td>
+    </tr>
+    <tr>
+      <td>Uso principal</td>
+      <td>Servidores, desarrollo de software, educación, uso personal avanzado.</td>
+    </tr>
+  </table>
+
+  <hr>
+
+  <h3>¿Qué es VirtualBox?</h3>
+  <p>
+    Oracle VM VirtualBox es un software de virtualización de código abierto que permite crear
+    y ejecutar máquinas virtuales (VMs) en un equipo físico (llamado <em>host</em>). Cada
+    máquina virtual actúa como una computadora independiente con su propio sistema operativo,
+    procesador virtual, memoria RAM asignada y disco duro virtual.
+  </p>
+  <table border="1">
+    <tr>
+      <th>Versión Utilizada</th>
+      <th>Oracle VM VirtualBox 7.0.20</th>
+    </tr>
+    <tr>
+      <td>Sistema host</td>
+      <td>Windows (PC del estudiante)</td>
+    </tr>
+    <tr>
+      <td>Sistema guest (invitado)</td>
+      <td>Ubuntu 24.04 LTS</td>
+    </tr>
+  </table>
+
+  <hr>
+
+  <h3>Proceso de Instalación Paso a Paso</h3>
+
+  <h4>Fase 1: Preparación</h4>
+  <ol>
+    <li><strong>Descarga de VirtualBox:</strong> Se accedió al sitio oficial de Oracle VirtualBox y se descargó el instalador para Windows (VirtualBox 7.0.20 platform packages &mdash; Windows hosts).</li>
+    <li><strong>Instalación de VirtualBox:</strong> Se ejecutó el instalador y se siguió el asistente de configuración. El proceso incluyó actualización del registro de componentes del sistema.</li>
+    <li><strong>Descarga de la imagen ISO de Ubuntu:</strong> Se accedió al sitio oficial de Ubuntu (ubuntu.com) y se descargó la imagen ISO de Ubuntu 24.04.4 LTS para arquitectura AMD64.</li>
+  </ol>
+
+  <h4>Fase 2: Creación de la Máquina Virtual</h4>
+  <ol>
+    <li>Abrir VirtualBox y hacer clic en "Nueva".</li>
+    <li>Asignar nombre a la VM: "Ubuntu 24".</li>
+    <li>Seleccionar el tipo: Linux, versión: Ubuntu (64-bit).</li>
+    <li>Asignar memoria RAM: mínimo 2048 MB (2 GB), recomendado 4096 MB (4 GB).</li>
+    <li>Crear un disco duro virtual: archivo VDI de 25 GB o más, asignación dinámica.</li>
+    <li>En "Almacenamiento", cargar la imagen ISO de Ubuntu en la unidad óptica virtual.</li>
+  </ol>
+
+  <h4>Fase 3: Instalación de Ubuntu</h4>
+  <ol>
+    <li>Iniciar la máquina virtual. El sistema arrancará desde la ISO de Ubuntu.</li>
+    <li>Seleccionar idioma: Español.</li>
+    <li>Elegir "Instalar Ubuntu" (no "Probar sin instalar").</li>
+    <li>Seleccionar tipo de instalación: "Normal" (incluye aplicaciones esenciales).</li>
+    <li>Elegir "Borrar disco e instalar Ubuntu" (en el disco virtual, no afecta el host).</li>
+    <li>Configurar zona horaria: Ciudad de Guatemala.</li>
+    <li>Crear usuario: nombre, nombre del equipo y contraseña.</li>
+    <li>Iniciar la instalación. El proceso tarda aproximadamente 15-30 minutos.</li>
+    <li>Al finalizar, reiniciar la VM y retirar la ISO del lector virtual.</li>
+  </ol>
+
+  <h4>Fase 4: Configuración Posterior a la Instalación</h4>
+  <ol>
+    <li>Actualizar el sistema: abrir terminal y ejecutar <code>sudo apt update &amp;&amp; sudo apt upgrade</code>.</li>
+    <li>Instalar paquetes adicionales según necesidad (en el proyecto se instaló <code>tree</code> y <code>zip</code>).</li>
+    <li>Explorar el entorno gráfico GNOME y las aplicaciones preinstaladas.</li>
+    <li>Practicar comandos básicos de terminal (ls, cd, mkdir, rm, sudo, apt, etc.).</li>
+  </ol>
+
+  <hr>
+
+  <h3>Comandos de Terminal Practicados</h3>
+  <table border="1">
+    <tr>
+      <th>Comando</th>
+      <th>Descripción</th>
+    </tr>
+    <tr>
+      <td><code>sudo apt update</code></td>
+      <td>Actualiza la lista de paquetes disponibles desde los repositorios.</td>
+    </tr>
+    <tr>
+      <td><code>sudo apt upgrade</code></td>
+      <td>Instala las actualizaciones de los paquetes ya instalados.</td>
+    </tr>
+    <tr>
+      <td><code>sudo apt install [paquete]</code></td>
+      <td>Instala un paquete de software específico.</td>
+    </tr>
+    <tr>
+      <td><code>ls</code></td>
+      <td>Lista los archivos y directorios del directorio actual.</td>
+    </tr>
+    <tr>
+      <td><code>cd [directorio]</code></td>
+      <td>Cambia al directorio especificado.</td>
+    </tr>
+    <tr>
+      <td><code>mkdir [nombre]</code></td>
+      <td>Crea un nuevo directorio.</td>
+    </tr>
+    <tr>
+      <td><code>pwd</code></td>
+      <td>Muestra la ruta del directorio actual.</td>
+    </tr>
+    <tr>
+      <td><code>sudo</code></td>
+      <td>Ejecuta un comando con permisos de administrador (superusuario).</td>
+    </tr>
+  </table>
+
+  <hr>
+
+  <h3>Diferencias entre Windows y Ubuntu</h3>
+  <table border="1">
+    <tr>
+      <th>Característica</th>
+      <th>Windows</th>
+      <th>Ubuntu (Linux)</th>
+    </tr>
+    <tr>
+      <td>Costo</td>
+      <td>De pago (licencia)</td>
+      <td>Gratuito y de código abierto</td>
+    </tr>
+    <tr>
+      <td>Gestión de software</td>
+      <td>Instaladores .exe, Microsoft Store</td>
+      <td>Gestor de paquetes APT, Snap</td>
+    </tr>
+    <tr>
+      <td>Terminal</td>
+      <td>CMD / PowerShell (uso limitado)</td>
+      <td>Bash / Terminal (uso extenso)</td>
+    </tr>
+    <tr>
+      <td>Uso en servidores</td>
+      <td>Windows Server (de pago)</td>
+      <td>Dominante en servidores mundiales</td>
+    </tr>
+    <tr>
+      <td>Personalización</td>
+      <td>Limitada</td>
+      <td>Muy alta (código abierto)</td>
+    </tr>
+    <tr>
+      <td>Seguridad</td>
+      <td>Mayor superficie de ataque</td>
+      <td>Generalmente más seguro</td>
+    </tr>
+  </table>
+
+  <hr>
+
+  <h3>Competencias Adquiridas</h3>
+  <ul>
+    <li><strong>Instalación y configuración básica de software:</strong> Instalar un sistema operativo completo desde cero y configurar sus parámetros iniciales.</li>
+    <li><strong>Manejo de virtualización:</strong> Comprender el concepto de máquinas virtuales y saber configurarlas con recursos apropiados.</li>
+    <li><strong>Uso de la terminal de Linux:</strong> Ejecutar comandos básicos en Bash, entender el sistema de permisos y gestionar paquetes con APT.</li>
+    <li><strong>Conocimiento de sistemas operativos alternativos:</strong> Familiarizarse con el ecosistema Linux, fundamental en servidores y desarrollo profesional.</li>
+  </ul>
+
+  <hr>
+
+  <h3>Justificación del Porcentaje (85%)</h3>
+  <p>
+    La instalación de Ubuntu fue completada exitosamente con todas sus fases. El dominio es
+    alto porque se logró configurar el entorno virtual, instalar el sistema operativo y
+    utilizarlo de forma básica. El 15% restante refleja que el dominio avanzado del terminal
+    de Linux (scripts bash, administración de usuarios, redes) requiere mayor práctica y tiempo
+    de exposición al sistema.
+  </p>
+
+  <hr>
+
+  <p>
+    <a href="index.html">&larr; Volver al Inicio</a> |
+    <a href="mantenimiento_maquinas.html">&larr; Proyecto Anterior</a> |
+    <a href="cables_red.html">Siguiente Proyecto &rarr;</a>
+  </p>
+  
+ <h3>Video de evidencia</h3>
+  <p>
+    <a href="https://drive.google.com/drive/folders/1odJolwZ6ujAc2GfnkoYsa920e_2BMHtA?usp=drive_link" target="_blank">
+      Ver videos del proyecto en Google Drive  </a>
+
+  <hr>
+  <p><em>Universidad Mariano Gálvez de Guatemala &mdash; Facultad de Ingeniería &mdash; 2026</em></p>
+
+
+  
+<footer id="footer-portafolio">
+ 
+  <div class="footer-inner">
+ 
+    <div class="footer-col-left">
+      <p class="footer-name">Diego Andreé de la Cruz Reyes</p>
+      <span class="footer-uni">Universidad Mariano Gálvez de Guatemala</span>
+      <span class="footer-badge">Semestre 2026</span>
+    </div>
+ 
+    <div class="footer-col-center">
+      <div class="footer-logo-circle">D</div>
+      <span class="footer-tagline">Portafolio Académico</span>
+    </div>
+ 
+    <div class="footer-col-right">
+      <a href="index.html">Inicio</a>
+      <a href="sobremi.html">Sobre mí</a>
+      <a href="index.html">Proyectos</a>
+      <a href="sobremi.html">Habilidades</a>
+      <a href="contacto.html">Contacto</a>
+    </div>
+ 
+  </div>
+ 
+  <hr class="footer-divider"/>
+ 
+  <div class="footer-bottom">
+    <p class="footer-copy">Diego Andreé de la Cruz Reyes &nbsp;·&nbsp; Universidad Mariano Gálvez de Guatemala</p>
+    <span class="footer-año">2026</span>
+  </div>
+ 
+</footer>
+</body>
+</html>

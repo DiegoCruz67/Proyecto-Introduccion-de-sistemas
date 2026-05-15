@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Proyecto 9 — Red LAN / Packet Tracer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+
+  <h1>Proyecto 9: Implementación de Red LAN en un Hogar de Tres Niveles (Packet Tracer)</h1>
+  <h2>Introducción a los Sistemas de Cómputo</h2>
+
+  <hr>
+
+  <h3>Información General</h3>
+  <table border="1" cellpadding="8" cellspacing="0">
+    <tr><td><strong>Curso</strong></td><td>Introducción a los Sistemas de Cómputo</td></tr>
+    <tr><td><strong>Nombre del proyecto</strong></td><td>Implementación de Red LAN en un Hogar de Tres Niveles</td></tr>
+    <tr><td><strong>Herramienta utilizada</strong></td><td>Cisco Packet Tracer</td></tr>
+    <tr><td><strong>Tipo de trabajo</strong></td><td>Individual</td></tr>
+    <tr><td><strong>Porcentaje de dominio</strong></td><td>85%</td></tr>
+  </table>
+
+  <hr>
+  <h2>Video</h2>
+  <video controls>
+  <source src="Proyecto packet tracer.mp4" type="video/mp4">
+  </video>
+<hr>
+  <div class="tres-fotos">
+  <div class="foto-item">
+    <div class="foto-circulo-md">
+      <img src="packet1.png" alt="Foto 1">
+    </div>
+    <p class="foto-caption"></p>
+  </div>
+
+  <div class="foto-item">
+    <div class="foto-circulo-md">
+      <img src="packet2.png" alt="Foto 2">
+    </div>
+    <p class="foto-caption"></p>
+  </div>
+
+  <div class="foto-item">
+    <div class="foto-circulo-md">
+      <img src="packet3.png" alt="Foto 3">
+    </div>
+    <p class="foto-caption"></p>
+  </div>
+  </div>
+
+
+  
+  
+  <hr>
+
+  <h3>Descripción General del Proyecto</h3>
+  <p>
+    En este proyecto se diseñó e implementó una red LAN (Local Area Network) dentro de una vivienda de tres niveles,
+    utilizando el simulador Cisco Packet Tracer. El objetivo principal fue aplicar conocimientos teóricos y prácticos
+    sobre redes, incluyendo direccionamiento IP, conexión de dispositivos, seguridad mediante contraseñas y
+    pruebas de conectividad entre todos los dispositivos de la red.
+  </p>
+  <p>
+    La red permite que todos los dispositivos distribuidos en los tres niveles del hogar puedan comunicarse
+    entre sí, compartir recursos (como una impresora) y mantener conectividad tanto cableada como inalámbrica.
+  </p>
+
+  <hr>
+
+  <h3>Tipo de Red y Topología</h3>
+  <ul>
+    <li><strong>Tipo de red:</strong> LAN — Local Area Network</li>
+    <li><strong>Topología:</strong> Híbrida (estrella extendida)</li>
+    <li>
+      <strong>Explicación de la topología:</strong> Se considera estrella porque todos los dispositivos dependen
+      de un punto central (router/switch), y extendida porque la red se distribuye en varios niveles mediante
+      cascada entre dispositivos de red.
+    </li>
+  </ul>
+
+  <hr>
+
+  <h3>Direccionamiento IP</h3>
+  <table border="1" cellpadding="8" cellspacing="0">
+    <tr><td><strong>Clase de red</strong></td><td>Clase B</td></tr>
+    <tr><td><strong>Red base</strong></td><td>172.16.0.0</td></tr>
+    <tr><td><strong>Máscara de subred</strong></td><td>255.255.0.0</td></tr>
+    <tr><td><strong>Razón de elección</strong></td><td>La clase B permite una mayor cantidad de hosts dentro de una red, siendo ideal para este tipo de implementación con múltiples dispositivos.</td></tr>
+  </table>
+
+  <hr>
+
+  <h3>Dispositivos de Red Utilizados</h3>
+  <table border="1" cellpadding="8" cellspacing="0">
+    <thead>
+      <tr>
+        <th>Dispositivo</th>
+        <th>Función en la red</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Router inalámbrico (WRT300N)</td>
+        <td>Dispositivo principal que asigna direcciones IP y permite la conexión entre la red interna e internet. También provee señal WiFi al primer nivel.</td>
+      </tr>
+      <tr>
+        <td>Switch (2960-24TT)</td>
+        <td>Interconecta todos los dispositivos cableados del segundo nivel y sirve de punto central de distribución para toda la red.</td>
+      </tr>
+      <tr>
+        <td>Access Point (AccessPoint0)</td>
+        <td>Amplía la señal inalámbrica hacia el tercer nivel del hogar, permitiendo la conexión de tablets y laptops sin cable.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr>
+
+  <h3>Descripción de la Topología por Nivel</h3>
+
+  <h4>Primer Nivel — Planta Baja</h4>
+  <ul>
+    <li>1 Router inalámbrico (WRT300N — Wireless Router0)</li>
+    <li>2 computadoras de escritorio conectadas al router (PC0 y PC10 / PC3 y PC4)</li>
+    <li>1 impresora conectada directamente al router (Printer0)</li>
+    <li>Conexión: cable directo entre PCs, impresora y el router</li>
+  </ul>
+
+  <h4>Segundo Nivel</h4>
+  <ul>
+    <li>1 Switch central (2960-24TT — Switch0)</li>
+    <li>3 computadoras de escritorio (PC2, PC5, PC6)</li>
+    <li>3 laptops conectadas por cable (Laptop0, Laptop1, Laptop2)</li>
+    <li>El Switch se conecta al Router del primer nivel mediante cable directo</li>
+    <li>El Access Point del tercer nivel también se conecta al Switch</li>
+  </ul>
+
+  <h4>Tercer Nivel</h4>
+  <ul>
+    <li>1 Access Point inalámbrico (AccessPoint0)</li>
+    <li>3 tablets conectadas de forma inalámbrica (Tablet PC0, Tablet PC1, Tablet PC02)</li>
+    <li>3 laptops conectadas de forma inalámbrica (Laptop3, Laptop4, Laptop5)</li>
+  </ul>
+
+  <hr>
+
+  <h3>Resumen de Dispositivos Totales</h3>
+  <table border="1" cellpadding="8" cellspacing="0">
+    <thead>
+      <tr><th>Tipo de dispositivo</th><th>Cantidad</th><th>Conexión</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Computadoras de escritorio (PCs)</td><td>7</td><td>Cableada</td></tr>
+      <tr><td>Laptops</td><td>6</td><td>3 cableadas, 3 inalámbricas</td></tr>
+      <tr><td>Tablets</td><td>3</td><td>Inalámbrica</td></tr>
+      <tr><td>Impresora</td><td>1</td><td>Cableada al router</td></tr>
+      <tr><td>Router</td><td>1</td><td>—</td></tr>
+      <tr><td>Switch</td><td>1</td><td>—</td></tr>
+      <tr><td>Access Point</td><td>1</td><td>—</td></tr>
+      <tr><td><strong>TOTAL</strong></td><td><strong>20 dispositivos</strong></td><td>—</td></tr>
+    </tbody>
+  </table>
+
+  <hr>
+
+  <h3>Pruebas de Conectividad</h3>
+
+  <h4>Método: Comando "ping" desde consola</h4>
+  <p>
+    Se utilizó el comando <code>ping</code> dentro de Packet Tracer para verificar la comunicación entre dispositivos.
+    Si los paquetes se envían y reciben correctamente, significa que hay conectividad exitosa entre los nodos de la red.
+  </p>
+
+  <h4>Resultados de las pruebas (desde PC3)</h4>
+  <table border="1" cellpadding="8" cellspacing="0">
+    <thead>
+      <tr><th>Origen</th><th>Destino</th><th>Resultado</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>PC3</td><td>PC4</td><td>Successful ✓</td></tr>
+      <tr><td>PC3</td><td>PC6</td><td>Successful ✓</td></tr>
+      <tr><td>PC3</td><td>PC5</td><td>Successful ✓</td></tr>
+      <tr><td>PC3</td><td>PC2</td><td>Successful ✓</td></tr>
+      <tr><td>PC3</td><td>Laptop2</td><td>Successful ✓</td></tr>
+      <tr><td>PC3</td><td>Tablet PC1</td><td>Successful ✓</td></tr>
+      <tr><td>PC3</td><td>Tablet PC02</td><td>Successful ✓</td></tr>
+      <tr><td>PC3</td><td>Laptop3</td><td>Successful ✓</td></tr>
+      <tr><td>PC3</td><td>Laptop4</td><td>Successful ✓</td></tr>
+      <tr><td>PC3</td><td>Laptop5</td><td>Successful ✓</td></tr>
+      <tr><td>PC3</td><td>Printer0</td><td>Successful ✓</td></tr>
+    </tbody>
+  </table>
+  <p>Todos los paquetes fueron enviados y recibidos correctamente. La red funciona de forma completa.</p>
+
+  <hr>
+
+  <h3>Resultados Esperados y Obtenidos</h3>
+  <p>
+    Se logró una red completamente funcional donde todos los dispositivos de los tres niveles del hogar pueden:
+  </p>
+  <ul>
+    <li>Comunicarse entre sí mediante ping exitoso.</li>
+    <li>Compartir recursos como la impresora del primer nivel.</li>
+    <li>Mantener seguridad mediante contraseñas en el router y el access point.</li>
+    <li>Conectarse tanto por cable (PCs y laptops del nivel 2) como de forma inalámbrica (tablets y laptops del nivel 3).</li>
+  </ul>
+
+  <hr>
+
+  <h3>Conceptos Clave Aplicados</h3>
+  <table border="1" cellpadding="8" cellspacing="0">
+    <thead>
+      <tr><th>Concepto</th><th>Descripción</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Red LAN</td><td>Conjunto de dispositivos conectados dentro de un área geográfica limitada (el hogar).</td></tr>
+      <tr><td>Router</td><td>Dispositivo principal que asigna direcciones IP y permite la conexión entre redes.</td></tr>
+      <tr><td>Switch</td><td>Interconecta múltiples dispositivos dentro de una misma red local.</td></tr>
+      <tr><td>Access Point</td><td>Amplía la señal inalámbrica para cubrir mayores distancias.</td></tr>
+      <tr><td>Clase B</td><td>Rango de direccionamiento IP que permite gran cantidad de hosts (hasta 65,534 por red).</td></tr>
+      <tr><td>Topología estrella extendida</td><td>Todos los dispositivos dependen de un nodo central, distribuido en cascada por niveles.</td></tr>
+      <tr><td>Ping</td><td>Herramienta de diagnóstico que verifica la comunicación entre dos nodos de la red.</td></tr>
+    </tbody>
+  </table>
+
+  <hr>
+
+  <h3>Competencias Adquiridas</h3>
+  <ul>
+    <li>Diseño y simulación de redes LAN con múltiples dispositivos y niveles.</li>
+    <li>Configuración de routers, switches y access points en Packet Tracer.</li>
+    <li>Aplicación de direccionamiento IP Clase B y configuración de máscaras de subred.</li>
+    <li>Realización de pruebas de conectividad mediante comandos de consola.</li>
+    <li>Comprensión de topologías de red y su aplicación en entornos reales del hogar.</li>
+    <li>Configuración de seguridad básica mediante contraseñas en dispositivos inalámbricos.</li>
+  </ul>
+
+  <h3>Justificación del Porcentaje de Dominio (85%)</h3>
+  <p>
+    Este curso presentó el mayor porcentaje de dominio porque integró múltiples prácticas esenciales
+    para la carrera de Ingeniería en Sistemas. El proyecto de redes específicamente permitió adquirir
+    una base sólida en diseño de infraestructura de red, configuración de dispositivos y resolución de
+    problemas de conectividad. El 15% restante representa que aún hay aspectos avanzados de routing,
+    subnetting y seguridad de redes por profundizar.
+  </p>
+
+  <hr>
+
+  <h3>Video de evidencia</h3>
+  <p>
+    <a href="https://drive.google.com/drive/folders/1odJolwZ6ujAc2GfnkoYsa920e_2BMHtA?usp=drive_link" target="_blank">
+      Ver videos del proyecto en Google Drive
+    </a>
+  </p>
+
+  <hr>
+
+  <p><a href="index.html">← Volver al índice principal</a></p>
+  <p>
+   
+    <a href="configuracion_red.html">← Proyecto 8</a> |
+    <a href="base_datos.html">Proyecto 10 →</a>
+  </p>
+
+
+<footer id="footer-portafolio">
+ 
+  <div class="footer-inner">
+ 
+    <div class="footer-col-left">
+      <p class="footer-name">Diego Andreé de la Cruz Reyes</p>
+      <span class="footer-uni">Universidad Mariano Gálvez de Guatemala</span>
+      <span class="footer-badge">Semestre 2026</span>
+    </div>
+ 
+    <div class="footer-col-center">
+      <div class="footer-logo-circle">D</div>
+      <span class="footer-tagline">Portafolio Académico</span>
+    </div>
+ 
+    <div class="footer-col-right">
+      <a href="index.html">Inicio</a>
+      <a href="sobremi.html">Sobre mí</a>
+      <a href="index.html">Proyectos</a>
+      <a href="sobremi.html">Habilidades</a>
+      <a href="contacto.html">Contacto</a>
+    </div>
+ 
+  </div>
+ 
+  <hr class="footer-divider"/>
+ 
+  <div class="footer-bottom">
+    <p class="footer-copy">Diego Andreé de la Cruz Reyes &nbsp;·&nbsp; Universidad Mariano Gálvez de Guatemala</p>
+    <span class="footer-año">2026</span>
+  </div>
+ 
+</footer>
+
+</body>
+</html>

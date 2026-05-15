@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Proyecto 8 Configuración de Red LAN — Intro Sistemas de Cómputo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+ 
+  <hr>
+
+  <h1>Proyecto 8: Configuración de Red LAN Física</h1>
+  <h2>Introducción a los Sistemas de Cómputo</h2>
+
+  <hr>
+
+  <h3>Información General</h3>
+  <table border="1" cellpadding="8" cellspacing="0">
+    <tr><td><strong>Curso</strong></td><td>Introducción a los Sistemas de Cómputo</td></tr>
+    <tr><td><strong>Nombre del proyecto</strong></td><td>Configuración de Red de Área Local (LAN) Física</td></tr>
+    <tr><td><strong>Tipo de trabajo</strong></td><td>Grupal</td></tr>
+    <tr><td><strong>Herramientas utilizadas</strong></td><td>Switch físico, cables de red RJ45, laptops/PCs con Windows/Ubuntu, consola CMD</td></tr>
+    <tr><td><strong>Porcentaje de dominio</strong></td><td>85%</td></tr>
+  </table>
+
+   <hr>
+<h2>Video</h2>
+  <video controls>
+  <source src="Proyecto Configuracion de Red.mp4" type="video/mp4">
+  </video>
+
+<hr>
+  <div class="tres-fotos">
+  <div class="foto-item">
+    <div class="foto-circulo-md">
+      <img src="confi1.png" alt="Foto 1">
+    </div>
+    <p class="foto-caption"></p>
+  </div>
+
+  <div class="foto-item">
+    <div class="foto-circulo-md">
+      <img src="confi2.png" alt="Foto 2">
+    </div>
+    <p class="foto-caption"></p>
+  </div>
+
+  <div class="foto-item">
+    <div class="foto-circulo-md">
+      <img src="confi3.png" alt="Foto 3">
+    </div>
+    <p class="foto-caption"></p>
+  </div>
+  </div>
+
+  <hr>
+
+  
+
+  <h3>Descripción General del Proyecto</h3>
+  <p>
+    En esta práctica se configuró una red de área local (LAN) de forma física y real, conectando varias
+    computadoras mediante un switch y cables de red fabricados por el propio equipo de trabajo. A diferencia
+    del proyecto de Packet Tracer (simulado), esta actividad se realizó con hardware real dentro del salón de clases.
+  </p>
+  <p>
+    El objetivo fue lograr que todas las computadoras del grupo pudieran comunicarse entre sí, compartir
+    archivos y recursos dentro de una misma red, asignando direcciones IP estáticas manualmente y configurando
+    un nombre de Grupo de Trabajo común para todas las máquinas.
+  </p>
+
+  <hr>
+
+  <h3>Materiales Utilizados</h3>
+  <table border="1" cellpadding="8" cellspacing="0">
+    <thead>
+      <tr><th>Material</th><th>Descripción</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Switch de red</td><td>Dispositivo central que interconectó todas las computadoras del grupo mediante puertos RJ45.</td></tr>
+      <tr><td>Cables de red RJ45</td><td>Cables elaborados por el equipo en la práctica anterior, siguiendo el estándar T568B.</td></tr>
+      <tr><td>Laptops y PCs</td><td>Equipos de cada integrante del grupo, con sistemas operativos Windows y Ubuntu.</td></tr>
+      <tr><td>Consola CMD / Terminal</td><td>Utilizada para verificar configuración de red con comandos como ipconfig y ping.</td></tr>
+    </tbody>
+  </table>
+
+  <hr>
+
+  <h3>Pasos de Configuración Realizados</h3>
+
+  <h4>Paso 1 — Conexión Física</h4>
+  <p>
+    Se conectaron todas las laptops y PCs al switch mediante los cables de red RJ45 fabricados previamente.
+    Cada integrante del grupo enchufó su cable en un puerto disponible del switch. Se verificó visualmente
+    que los LEDs del switch indicaran conexión activa en cada puerto.
+  </p>
+
+  <h4>Paso 2 — Asignación de IP Estática</h4>
+  <p>
+    En cada computadora se configuró manualmente una dirección IP estática dentro del mismo rango de red
+    para que todos los equipos pudieran reconocerse. La configuración aplicada fue:
+  </p>
+  <table border="1" cellpadding="8" cellspacing="0">
+    <thead>
+      <tr><th>Parámetro</th><th>Valor configurado</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Dirección IP</td><td>192.168.X.X (diferente para cada equipo, mismo rango)</td></tr>
+      <tr><td>Longitud del prefijo / Máscara</td><td>24 / 255.255.255.0</td></tr>
+      <tr><td>Puerta de enlace</td><td>192.168.1.1</td></tr>
+      <tr><td>DNS preferido</td><td>8.8.8.8 (Google DNS)</td></tr>
+      <tr><td>IPv6</td><td>Desactivado</td></tr>
+    </tbody>
+  </table>
+  <p>
+    En Windows la configuración se realizó desde: Panel de Control → Centro de redes → Cambiar configuración
+    del adaptador → Propiedades del adaptador → Protocolo de Internet versión 4 (TCP/IPv4) → Manual.
+  </p>
+  <p>
+    En Ubuntu la configuración se realizó desde: Configuración → Red → Editar configuración de IP → Manual,
+    ingresando los mismos parámetros.
+  </p>
+
+  <h4>Paso 3 — Configuración del Grupo de Trabajo</h4>
+  <p>
+    Para que las computadoras con Windows pudieran verse entre sí en la red local, se configuró el mismo
+    nombre de Grupo de Trabajo en todos los equipos. Esto se realizó desde:
+    Panel de Control → Sistema → Configuración avanzada del sistema → Nombre de equipo → Cambiar → Grupo de trabajo.
+  </p>
+  <p>
+    Todos los integrantes usaron el mismo nombre de Grupo de Trabajo, lo que permitió que los equipos
+    se reconocieran automáticamente dentro de la red y facilitó el intercambio de archivos y recursos.
+  </p>
+
+  <h4>Paso 4 — Verificación con ipconfig</h4>
+  <p>
+    Desde la consola CMD de Windows (o terminal en Ubuntu) se ejecutó el comando <code>ipconfig</code>
+    para verificar que la dirección IP estática había sido asignada correctamente al adaptador de red.
+    Se revisaron los siguientes datos:
+  </p>
+  <ul>
+    <li>Dirección IPv4 asignada correctamente.</li>
+    <li>Máscara de subred: 255.255.255.0</li>
+    <li>Puerta de enlace predeterminada: 192.168.1.1</li>
+    <li>Estado del adaptador: conectado y activo.</li>
+  </ul>
+
+  <h4>Paso 5 — Prueba de Conectividad con ping</h4>
+  <p>
+    Se utilizó el comando <code>ping</code> seguido de la dirección IP de cada compañero para verificar
+    que la comunicación entre equipos funcionara correctamente. Un ping exitoso confirma que los paquetes
+    viajan desde una máquina a otra a través del switch.
+  </p>
+  <pre>
+Ejemplo:
+C:\Users\usuario> ping 192.168.1.2
+Haciendo ping a 192.168.1.2 con 32 bytes de datos:
+Respuesta desde 192.168.1.2: bytes=32 tiempo&lt;1ms TTL=128
+Respuesta desde 192.168.1.2: bytes=32 tiempo&lt;1ms TTL=128
+
+Estadísticas de ping para 192.168.1.2:
+    Paquetes: enviados = 4, recibidos = 4, perdidos = 0 (0% perdidos)
+  </pre>
+
+  <hr>
+
+  <h3>Preguntas y Respuestas de la Práctica</h3>
+
+  <h4>1. ¿Fue necesario usar el cable cruzado para conectar las PCs al Switch? ¿Por qué crees que funcionó o no funcionó con el directo?</h4>
+  <p>
+    No fue necesario el cable cruzado. Para conectar una PC a un switch se utiliza el cable directo, ya que
+    este nos permite conectar dispositivos de diferente tipo (PC con switch). El cable cruzado se usaría
+    para conectar dos PCs directamente entre sí sin switch. Además, la mayoría de los switches actuales
+    tienen tecnología Auto-MDIX que detecta automáticamente el tipo de cable y se adapta, por lo que incluso
+    un cable cruzado podría funcionar.
+  </p>
+
+  <h4>2. Al cambiar la IP a estática, ¿qué pasaría si dos personas del mismo grupo ponen la misma IP (ej. 192.168.1.1)?</h4>
+  <p>
+    Se genera un conflicto de IP. Esto provoca que las computadoras tengan problemas de conexión, ya que
+    la red no puede identificar correctamente a cada equipo con la misma dirección. Como resultado, puede
+    fallar la comunicación entre los equipos afectados o incluso perderse el acceso completo a la red para
+    ambas máquinas. Windows muestra una advertencia de "conflicto de dirección IP" en la barra de tareas.
+  </p>
+
+  <h4>3. ¿Qué ventaja tiene usar un nombre de Grupo de Trabajo igual para todos los integrantes?</h4>
+  <p>
+    Usar el mismo nombre de Grupo de Trabajo facilita que las computadoras se reconozcan automáticamente
+    dentro de la red local. Esto permite compartir archivos, carpetas y recursos (como impresoras) de manera
+    más rápida y sencilla, además de hacer más organizada y visible la conexión entre los equipos del grupo.
+  </p>
+
+  <hr>
+
+  <h3>Diferencias entre Cable Directo y Cable Cruzado</h3>
+  <table border="1" cellpadding="8" cellspacing="0">
+    <thead>
+      <tr><th>Característica</th><th>Cable Directo</th><th>Cable Cruzado</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Estándar de un extremo</td><td>T568B</td><td>T568A</td></tr>
+      <tr><td>Estándar del otro extremo</td><td>T568B</td><td>T568B</td></tr>
+      <tr><td>Uso típico</td><td>PC → Switch, PC → Router</td><td>PC → PC directamente</td></tr>
+      <tr><td>¿Funciona con Auto-MDIX?</td><td>Sí</td><td>Sí</td></tr>
+      <tr><td>Usado en esta práctica</td><td>Sí</td><td>No</td></tr>
+    </tbody>
+  </table>
+
+  <hr>
+
+  <h3>Topología Implementada</h3>
+  <p>
+    La red configurada en el salón de clases siguió una topología en <strong>estrella</strong>:
+    todos los equipos se conectaron a un único switch central, que actúa como nodo de distribución.
+    Ningún equipo se conectó directamente a otro, sino que todo el tráfico de datos pasó a través del switch.
+  </p>
+  <ul>
+    <li>Ventaja: Si una computadora falla, las demás siguen comunicándose sin interrupción.</li>
+    <li>Ventaja: Es fácil agregar o quitar equipos sin afectar al resto de la red.</li>
+    <li>Desventaja: Si el switch falla, toda la red deja de funcionar.</li>
+  </ul>
+
+  <hr>
+
+  <h3>Competencias Adquiridas</h3>
+  <ul>
+    <li>Configuración manual de direcciones IP estáticas en Windows y Ubuntu.</li>
+    <li>Comprensión del funcionamiento de una red LAN física con switch.</li>
+    <li>Uso de herramientas de diagnóstico de red: ipconfig y ping desde consola.</li>
+    <li>Identificación y solución de conflictos de IP en redes locales.</li>
+    <li>Configuración de Grupo de Trabajo para compartir recursos en red.</li>
+    <li>Comprensión de la diferencia entre cable directo y cruzado y su uso correcto.</li>
+    <li>Aplicación práctica de la topología en estrella con hardware real.</li>
+  </ul>
+
+  <h3>Justificación del Porcentaje de Dominio (85%)</h3>
+  <p>
+    Esta práctica permitió aplicar de forma directa y tangible los conceptos de redes aprendidos en clase,
+    usando hardware real en lugar de un simulador. Se lograron configurar correctamente las IPs estáticas,
+    establecer la comunicación entre todos los equipos del grupo y responder correctamente las preguntas
+    de análisis. El 15% restante reconoce que aspectos como la configuración avanzada de switches
+    (VLANs, STP) y la resolución de fallos más complejos aún están en desarrollo.
+  </p>
+
+  <hr>
+
+  <h3>Video de evidencia</h3>
+  <p>
+    <a href="https://drive.google.com/drive/folders/1odJolwZ6ujAc2GfnkoYsa920e_2BMHtA?usp=drive_link" target="_blank">
+      Ver videos del proyecto en Google Drive
+    </a>
+  </p>
+
+  <hr>
+
+  <p><a href="index.html">← Volver al índice principal</a></p>
+  <p>
+    <a href="packet_tracer.html">← Proyecto 7 </a> |
+    <a href="base_datos.html">Proyecto 9  →</a>
+  </p>
+
+  <footer id="footer-portafolio">
+ 
+  <div class="footer-inner">
+ 
+    <div class="footer-col-left">
+      <p class="footer-name">Diego Andreé de la Cruz Reyes</p>
+      <span class="footer-uni">Universidad Mariano Gálvez de Guatemala</span>
+      <span class="footer-badge">Semestre 2026</span>
+    </div>
+ 
+    <div class="footer-col-center">
+      <div class="footer-logo-circle">D</div>
+      <span class="footer-tagline">Portafolio Académico</span>
+    </div>
+ 
+    <div class="footer-col-right">
+      <a href="index.html">Inicio</a>
+      <a href="sobremi.html">Sobre mí</a>
+      <a href="index.html">Proyectos</a>
+      <a href="sobremi.html">Habilidades</a>
+      <a href="contacto.html">Contacto</a>
+    </div>
+ 
+  </div>
+ 
+  <hr class="footer-divider"/>
+ 
+  <div class="footer-bottom">
+    <p class="footer-copy">Diego Andreé de la Cruz Reyes &nbsp;·&nbsp; Universidad Mariano Gálvez de Guatemala</p>
+    <span class="footer-año">2026</span>
+  </div>
+ 
+</footer>
+
+</body>
+</html>

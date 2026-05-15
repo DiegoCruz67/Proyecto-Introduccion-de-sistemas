@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Proyecto 4 - Lógica de Sistemas: Circuito Físico</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <h1>Proyecto 4: Circuito con Álgebra de Boole</h1>
+  <h2>Curso: Lógica de Sistemas</h2>
+
+  <hr>
+
+  <h3>Datos Generales del Proyecto</h3>
+  <table border="1">
+    <tr><th>Nombre del Proyecto</th><td>Circuito Digital Combinacional &mdash; Sistema de Monitoreo de Cuidados Intensivos</td></tr>
+    <tr><th>Tipo de Trabajo</th><td>Individual</td></tr>
+    <tr><th>Curso</th><td>Lógica de Sistemas (Código: 005)</td></tr>
+    <tr><th>Carrera</th><td>5090 &mdash; Ingeniería en Sistemas</td></tr>
+    <tr><th>Valor</th><td>20 puntos &mdash; Examen Final</td></tr>
+    <tr><th>Fecha de Entrega</th><td>21/05/2026</td></tr>
+    <tr><th>Porcentaje de Dominio</th><td>70%</td></tr>
+    <tr><th>Estudiante</th><td>Diego Andreé de la Cruz Reyes</td></tr>
+    <tr><th>Carnet</th><td>5090-26-2322</td></tr>
+  </table>
+
+  <hr>
+<h2>Video</h2>
+  <video controls>
+  <source src="Proyecto Lógica de Sistemas.mp4" type="video/mp4">
+  </video>
+<hr>
+  <div class="tres-fotos">
+  <div class="foto-item">
+    <div class="foto-circulo-md">
+      <img src="logica1.png" alt="Foto 1">
+    </div>
+    <p class="foto-caption"></p>
+  </div>
+
+  <div class="foto-item">
+    <div class="foto-circulo-md">
+      <img src="logica2.png" alt="Foto 2">
+    </div>
+    <p class="foto-caption"></p>
+  </div>
+
+  <div class="foto-item">
+    <div class="foto-circulo-md">
+      <img src="logica3.png" alt="Foto 3">
+    </div>
+    <p class="foto-caption"></p>
+  </div>
+  </div>
+
+  <hr>
+
+  <h3>Descripción General</h3>
+  <p>
+    Se construyó un circuito físico capaz de generar patrones para encender y apagar LEDs según
+    la lógica booleana solicitada. El proyecto final consistió en el análisis, diseño e
+    implementación física de un circuito digital combinacional a partir de un problema planteado,
+    aplicando los principios de lógica proposicional, Álgebra de Boole y utilizando compuertas
+    lógicas AND, OR y NOT.
+  </p>
+
+  <hr>
+
+  <h3>Problema Planteado (Problema 4)</h3>
+  <p>
+    <strong>Contexto:</strong> En una sala de cuidados intensivos, se requiere implementar un
+    sistema digital capaz de monitorear constantemente diferentes condiciones críticas del estado
+    de un paciente.
+  </p>
+
+  <h4>Sensores de Entrada (Variables de Entrada)</h4>
+  <table border="1">
+    <tr>
+      <th>Variable</th>
+      <th>Sensor</th>
+      <th>Valor 1 (condición crítica)</th>
+      <th>Valor 0 (condición normal)</th>
+    </tr>
+    <tr>
+      <td>A</td>
+      <td>Sensor de nivel de oxígeno bajo</td>
+      <td>Oxígeno bajo detectado</td>
+      <td>Oxígeno normal</td>
+    </tr>
+    <tr>
+      <td>B</td>
+      <td>Sensor de frecuencia cardíaca anormal</td>
+      <td>Frecuencia cardíaca anormal</td>
+      <td>Frecuencia cardíaca normal</td>
+    </tr>
+    <tr>
+      <td>C</td>
+      <td>Sensor de temperatura corporal fuera del rango normal</td>
+      <td>Temperatura fuera de rango</td>
+      <td>Temperatura normal</td>
+    </tr>
+    <tr>
+      <td>D</td>
+      <td>Sensor de presión arterial elevada</td>
+      <td>Presión arterial elevada</td>
+      <td>Presión arterial normal</td>
+    </tr>
+  </table>
+
+  <h4>Salidas del Sistema</h4>
+  <table border="1">
+    <tr>
+      <th>Salida</th>
+      <th>Descripción</th>
+      <th>Condición de Activación</th>
+    </tr>
+    <tr>
+      <td>Y1</td>
+      <td>Alarma visual y sonora</td>
+      <td>Se activa cuando A=1 AND (B=1 OR C=1). Es decir, oxígeno bajo Y además frecuencia anormal O temperatura fuera de rango.</td>
+    </tr>
+    <tr>
+      <td>Y2</td>
+      <td>Señal de emergencia al personal médico</td>
+      <td>Se activa cuando A=1 AND B=1 AND D=1. Es decir, oxígeno bajo Y frecuencia cardíaca anormal Y presión arterial elevada.</td>
+    </tr>
+  </table>
+
+  <hr>
+
+  <h3>Funciones Booleanas</h3>
+  <p>
+    A partir del análisis de los requisitos del sistema, se obtienen las siguientes funciones booleanas:
+  </p>
+  <table border="1">
+    <tr>
+      <th>Salida</th>
+      <th>Función Booleana</th>
+      <th>Descripción</th>
+    </tr>
+    <tr>
+      <td>Y1</td>
+      <td>Y1 = A · (B + C)</td>
+      <td>Alarma visual y sonora: A AND (B OR C)</td>
+    </tr>
+    <tr>
+      <td>Y2</td>
+      <td>Y2 = A · B · D</td>
+      <td>Señal de emergencia: A AND B AND D</td>
+    </tr>
+  </table>
+
+  <hr>
+
+  <h3>Tabla de Verdad</h3>
+  <table border="1">
+    <tr>
+      <th>A</th><th>B</th><th>C</th><th>D</th>
+      <th>B+C</th>
+      <th>Y1 = A·(B+C)</th>
+      <th>A·B</th>
+      <th>Y2 = A·B·D</th>
+    </tr>
+    <tr><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+    <tr><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+    <tr><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+    <tr><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+    <tr><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+    <tr><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+    <tr><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+    <tr><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+    <tr><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+    <tr><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+    <tr><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+    <tr><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+    <tr><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+    <tr><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+    <tr><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+    <tr><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+  </table>
+
+  <hr>
+
+  <h3>Compuertas Lógicas Utilizadas</h3>
+  <table border="1">
+    <tr>
+      <th>Compuerta</th>
+      <th>Símbolo Lógico</th>
+      <th>Función</th>
+      <th>Uso en el Circuito</th>
+    </tr>
+    <tr>
+      <td>AND</td>
+      <td>·</td>
+      <td>Salida = 1 solo si TODAS las entradas son 1.</td>
+      <td>Para combinar condiciones críticas simultáneas (A·B, A·B·D).</td>
+    </tr>
+    <tr>
+      <td>OR</td>
+      <td>+</td>
+      <td>Salida = 1 si AL MENOS UNA entrada es 1.</td>
+      <td>Para combinar condiciones alternativas (B+C).</td>
+    </tr>
+    <tr>
+      <td>NOT</td>
+      <td>'</td>
+      <td>Salida = complemento de la entrada.</td>
+      <td>Para condiciones de negación cuando se requiera.</td>
+    </tr>
+  </table>
+
+  <hr>
+
+  <h3>Implementación Física del Circuito</h3>
+  <p>
+    El circuito fue implementado físicamente en un protoboard (tableta de pruebas), utilizando:
+  </p>
+  <ul>
+    <li><strong>Chips de compuertas lógicas:</strong> Circuitos integrados (ICs) que contienen múltiples compuertas AND, OR y NOT en un solo componente.</li>
+    <li><strong>LEDs:</strong> Diodos emisores de luz utilizados como indicadores visuales de las salidas Y1 y Y2.</li>
+    <li><strong>Resistencias:</strong> Para limitar la corriente y proteger los LEDs.</li>
+    <li><strong>Interruptores DIP:</strong> Para simular las 4 señales de entrada (A, B, C, D). Cada interruptor puede estar en posición ON (1) u OFF (0).</li>
+    <li><strong>Cables de colores:</strong> Para conectar los componentes en el protoboard de forma organizada.</li>
+    <li><strong>Fuente de alimentación:</strong> Proporciona el voltaje necesario (generalmente 5V para circuitos TTL).</li>
+  </ul>
+
+  <h4>Proceso de Construcción</h4>
+  <ol>
+    <li>Identificar los pines de cada compuerta en el datasheet del chip.</li>
+    <li>Conectar la alimentación (VCC y GND) al protoboard.</li>
+    <li>Insertar los chips de compuertas lógicas en el protoboard.</li>
+    <li>Conectar los interruptores DIP a las entradas de las compuertas.</li>
+    <li>Cablear las compuertas entre sí según el diagrama lógico (primero la compuerta OR para B+C, luego las compuertas AND).</li>
+    <li>Conectar las salidas de las compuertas AND finales a los LEDs correspondientes.</li>
+    <li>Verificar el funcionamiento con todas las combinaciones posibles de entrada.</li>
+  </ol>
+
+  <hr>
+
+  <h3>Objetivos del Proyecto</h3>
+  <ul>
+    <li>Aplicar los conocimientos de Lógica de Sistemas para el análisis y resolución de problemas mediante sistemas formales deductivos, lógica proposicional y Álgebra de Boole.</li>
+    <li>Desarrollar la capacidad de modelar y diseñar circuitos digitales combinacionales que den solución a un problema específico.</li>
+    <li>Emplear el Álgebra de Boole para la obtención y simplificación de expresiones booleanas utilizadas en el diseño del circuito.</li>
+    <li>Implementar físicamente un circuito digital funcional utilizando compuertas lógicas básicas.</li>
+    <li>Fortalecer la comprensión de los conceptos fundamentales de electrónica digital aplicados al diseño de sistemas computacionales.</li>
+  </ul>
+
+  <hr>
+
+  <h3>Competencias Adquiridas</h3>
+  <ul>
+    <li><strong>Aplicación de lógica booleana y pensamiento secuencial:</strong> Traducir un problema real a una expresión matemática booleana y luego a un circuito físico.</li>
+    <li><strong>Interpretación de instrucciones técnicas y resolución de problemas:</strong> Leer datasheets de componentes, interpretar diagramas de circuitos y solucionar fallas durante la construcción.</li>
+    <li><strong>Uso de componentes básicos para construir un circuito funcional:</strong> Manipular chips, LEDs, resistencias e interruptores en un protoboard.</li>
+    <li><strong>Pensamiento crítico para depuración:</strong> Identificar y corregir errores de cableado o lógica cuando el circuito no funcionaba correctamente.</li>
+  </ul>
+
+  <hr>
+
+  <h3>Justificación del Porcentaje (70%)</h3>
+  <p>
+    El dominio es medio alto porque el proyecto exigió relacionar teoría con práctica, comprender
+    la lógica de funcionamiento y aplicar criterio técnico para que el circuito respondiera
+    correctamente a lo solicitado. El 30% restante refleja que aún hay conceptos de simplificación
+    de funciones booleanas (mapas de Karnaugh) y diseño de circuitos más complejos que requieren
+    mayor práctica y estudio.
+  </p>
+
+  <hr>
+
+  <p>
+    <a href="index.html">&larr; Volver al Inicio</a> |
+    <a href="contabilidad.html">&larr; Proyecto Anterior</a> |
+    <a href="mantenimiento_maquinas.html">Siguiente Proyecto &rarr;</a>
+  </p>
+
+ <h3>Video de evidencia</h3>
+  <p>
+    <a href="https://drive.google.com/drive/folders/1odJolwZ6ujAc2GfnkoYsa920e_2BMHtA?usp=drive_link" target="_blank">
+      Ver videos del proyecto en Google Drive  </a>
+
+  <hr>
+  <p><em>Universidad Mariano Gálvez de Guatemala &mdash; Facultad de Ingeniería &mdash; 2026</em></p>
+
+
+  
+<footer id="footer-portafolio">
+ 
+  <div class="footer-inner">
+ 
+    <div class="footer-col-left">
+      <p class="footer-name">Diego Andreé de la Cruz Reyes</p>
+      <span class="footer-uni">Universidad Mariano Gálvez de Guatemala</span>
+      <span class="footer-badge">Semestre 2026</span>
+    </div>
+ 
+    <div class="footer-col-center">
+      <div class="footer-logo-circle">D</div>
+      <span class="footer-tagline">Portafolio Académico</span>
+    </div>
+ 
+    <div class="footer-col-right">
+      <a href="index.html">Inicio</a>
+      <a href="sobremi.html">Sobre mí</a>
+      <a href="index.html">Proyectos</a>
+      <a href="sobremi.html">Habilidades</a>
+      <a href="contacto.html">Contacto</a>
+    </div>
+ 
+  </div>
+ 
+  <hr class="footer-divider"/>
+ 
+  <div class="footer-bottom">
+    <p class="footer-copy">Diego Andreé de la Cruz Reyes &nbsp;·&nbsp; Universidad Mariano Gálvez de Guatemala</p>
+    <span class="footer-año">2026</span>
+  </div>
+ 
+</footer>
+</body>
+</html>
